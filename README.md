@@ -75,6 +75,8 @@ En index.html ponemos <meta name="theme-color" content="#3498db"> el mismo color
 
 Podemos probar el manifest en la depuradora > Application > Manifest
 
+Hay herramientas online para generar automáticamente el manifest: `https://app-manifest.firebaseapp.com/`
+
 
 ## Quitar la función pull to refresh propia de los navegadores web
 
@@ -155,6 +157,11 @@ Como estamos usando la estrategia del Caché con Network fallout, la PWA sólo i
 cambiado el recurso en internet la PWA no irá si ya existe en caché.
 
 Para avisar a la PWA de que hay cambios en ciertos archivos cambiamos la versión del espacio de caché pertinente
+
+
+## Audits - Lighthouse
+
+Herramienta en el inspector para auditar si nuestra PWA cumple con el standard y consejos para mejorar la experiencia de usuario
 
 
 # GIT
