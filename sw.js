@@ -12,7 +12,7 @@ importScripts( 'js/sw-utils.js' ); // añadimos importScripts al .jshintrc
 // ========================================
 
 
-const STATIC_CACHE_NAME = 'staticCache-v1';
+const STATIC_CACHE_NAME = 'staticCache-v2';
 const DYNAMIC_CACHE_NAME = 'dynamicCache-v1';
 const UNMUTABLE_CACHE_NAME = 'unmutableCache-v1';
 

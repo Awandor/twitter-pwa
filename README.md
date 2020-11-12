@@ -145,6 +145,14 @@ Las apps nativas no permiten seleccionar texto podemos controlar esto por css, h
 `-webkit-touch-callout: none;`
 
 
+## Subir la versión del STATIC_CACHE
+
+Como estamos usando la estrategia del Caché con Network fallout, la PWA sólo irá a internet si el recurso no existe en Caché, aunque haya
+cambiado el recurso en internet la PWA no irá si ya existe en caché.
+
+Para avisar a la PWA de que hay cambios en ciertos archivos cambiamos la versión del espacio de caché pertinente
+
+
 # GIT
 
 En nuestra cuenta de github creamos un repositorio
