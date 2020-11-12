@@ -17,7 +17,7 @@ const DYNAMIC_CACHE_NAME = 'dynamicCache-v1';
 const UNMUTABLE_CACHE_NAME = 'unmutableCache-v1';
 
 const APP_SHELL = [
-  '/',
+  // '/', // Sólo para desarrollo en localhost
   'index.html',
   'css/style.css',
   'img/favicon.ico',

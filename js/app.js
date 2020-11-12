@@ -2,9 +2,18 @@
 // Registar sw
 // ========================================
 
+const url = window.location.href;
+
+let swLocation = '/twitter-pwa/sw.js'; // Subcarpeta de mi cuenta en github
+
 if ( navigator.serviceWorker ) {
 
-  navigator.serviceWorker.register( '/sw.js' );
+  if ( url.includes( 'localhost' ) ) {
+
+    swLocation = '/sw.js';
+  }
+
+  navigator.serviceWorker.register( swLocation );
 
 }
 

@@ -94,11 +94,29 @@ La app en el dispositivo no se ve como una app nativa aparece como una página w
 un servidor https
 
 
+## Desplegar aplicación en GitHub Pages
 
+Vamos github y creamos un nuevo repositorio, subimos la app
 
+Ahora vamos acceder al repositorio como si fuera una página web
 
+Vamos a Settings > GitHub Pages > Source > master branch > Save
 
+La app es ahora accesible desde `https://awandor.github.io/twitter-pwa/`
 
+Si abrimos el inspector tenemos error en consola: `Uncaught (in promise) TypeError: Failed to register a ServiceWorker`
+
+El problema está en que la app no se encuentra en la raiz del dominio, está en una subcarpeta
+
+En `app.js` estamos llamando al sw `navigator.serviceWorker.register( '/sw.js' );`
+
+`'/sw.js'` la barra indica que está en la raiz pero en github no lo está
+
+Vamos a añadir una pequeña verificación en `app.js`
+
+También hay que tener cuidado en sw.js en APP_SHELL con la barra, ésta nos sirve para desarrollo en localhost pero no en github, la comentamos
+
+Subimos los cambios a github
 
 
 
@@ -119,7 +137,7 @@ Si en este punto borro accidentalmente algo puedo recuperarlo con > `git checkou
 Que nos recontruye los archivos tal y como estaban en el último commit.
 
 Enlazamos el repositorio local con un repositorio externo en GitHub donde tenemos cuenta y hemos creado un repositorio
-`git remote add origin https://github.com/Awandor/fundamentos-promesas-fetch.git`
+`git remote add origin https://github.com/Awandor/twitter-pwa.git`
 
 Situarnos en la rama master > `git branch -M master`
 
