@@ -76,6 +76,11 @@ En index.html ponemos <meta name="theme-color" content="#3498db"> el mismo color
 Podemos probar el manifest en la depuradora > Application > Manifest
 
 
+## Quitar la función pull to refresh propia de los navegadores web
+
+Lo controlamos por CSS y lo aplicamos al body: `overscroll-behavior-y: contain;`
+
+
 ## Depurar y correr en un dispositivo real
 
 En el dispositivo vamos a opciones de desarrollador, debe estar activo y activar USB debugging
@@ -95,6 +100,8 @@ un servidor https
 
 
 ## Desplegar aplicación en GitHub Pages
+
+Para que una PWA funcione tiene que estar alojada en un `https`
 
 Vamos github y creamos un nuevo repositorio, subimos la app
 
@@ -116,9 +123,26 @@ Vamos a añadir una pequeña verificación en `app.js`
 
 También hay que tener cuidado en sw.js en APP_SHELL con la barra, ésta nos sirve para desarrollo en localhost pero no en github, la comentamos
 
-Subimos los cambios a github
+Subimos los cambios a github, esperamos un ratito y ya funciona bien y la podemos instalar en el dispositivo
 
 
+## Mejorar apariencia en IOS
+
+Poco a poco IOS va aceptando el standard de las PWA, de momento podemos hacer algunos ajustes
+
+Vamos a index y añadimos unas líneas, si la app tuviera más de una página HTML habría que añadir estas líneas a todas ellas
+
+Documentación: `https://medium.com/appscope/designing-native-like-progressive-web-apps-for-ios-1b3cdda1d0e8`
+
+También tenemos un PDF con la misma info en Recursos
+
+Cuando IOS acepte por completo el manifest.json no hará falta añadir todo esto al index
+
+Las apps nativas no permiten seleccionar texto podemos controlar esto por css, hacemos lo mismo para highlights y callouts
+
+`-webkit-user-select: none;`
+`-webkit-tap-highlight-color: transparent;`
+`-webkit-touch-callout: none;`
 
 
 # GIT
