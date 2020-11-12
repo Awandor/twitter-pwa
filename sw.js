@@ -12,8 +12,8 @@ importScripts( 'js/sw-utils.js' ); // añadimos importScripts al .jshintrc
 // ========================================
 
 
-const STATIC_CACHE_NAME = 'staticCache-v2';
-const DYNAMIC_CACHE_NAME = 'dynamicCache-v1';
+const STATIC_CACHE_NAME = 'staticCache-v3';
+const DYNAMIC_CACHE_NAME = 'dynamicCache-v2';
 const UNMUTABLE_CACHE_NAME = 'unmutableCache-v1';
 
 const APP_SHELL = [
@@ -80,7 +80,7 @@ self.addEventListener( 'activate', activateEvent => {
 
     promesaKeys.forEach( key => {
 
-      if ( key !== STATIC_CACHE_NAME && key.includes( 'static' ) ) {
+      if ( ( key !== STATIC_CACHE_NAME && key.includes( 'staticCache' ) ) || ( key !== DYNAMIC_CACHE_NAME && key.includes( 'dynamicCache' ) ) ) {
 
         return caches.delete( key );
 

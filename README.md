@@ -144,6 +144,10 @@ Las apps nativas no permiten seleccionar texto podemos controlar esto por css, h
 `-webkit-tap-highlight-color: transparent;`
 `-webkit-touch-callout: none;`
 
+Vamos a quitar el notch, ese espacio en IOS X en adelante que es donde está la cámara
+
+Vamos a `index.html` > meta viewport y añadimos `height=device-height, viewport-fit=cover`
+
 
 ## Subir la versión del STATIC_CACHE
 
